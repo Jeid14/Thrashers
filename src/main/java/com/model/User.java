@@ -1,15 +1,12 @@
 package com.model;
 
-//import com.sun.istack.NotNull;
-//
-//import javax.persistence.*;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
-//
 @Entity
 @Table(name = "all_users")
 public class User {
@@ -18,9 +15,13 @@ public class User {
     private Integer id;
     @NotNull
     @NotEmpty
+    @Size(min = 4, max = 20)
+    @Pattern(regexp = "^[a-zA-Z](.[a-zA-Z0-9_-]*)$")
     private String login;
     @NotNull
     @NotEmpty
+    @Size(min = 6, max = 20)
+    @Pattern(regexp = "[0-9a-zA-Z]{6,}")
     private String password;
 
     public String getLogin() {
@@ -38,7 +39,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
 
     public void setId(Integer id) {
         this.id = id;
