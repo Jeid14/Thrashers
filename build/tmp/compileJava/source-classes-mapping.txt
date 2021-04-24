@@ -1,24 +1,38 @@
+com/model/Person.java
+ com.model.Person
+ com.model.Person$PersonBuilder
 com/model/dto/PersonDTO.java
  com.model.dto.PersonDTO
  com.model.dto.PersonDTO$PersonDTOBuilder
-com/config/SecurityConfig.java
- com.config.SecurityConfig
-com/controllers/AuthorizationControler.java
- com.controllers.AuthorizationControler
-com/controllers/RegistrationController.java
- com.controllers.RegistrationController
-com/repo/UserRepo.java
- com.repo.UserRepo
-com/controllers/InvalidInputData.java
- com.controllers.InvalidInputData
+com/security/jwt/model/JwtPerson.java
+ com.security.jwt.model.JwtPerson
 com/ApplicationStarter.java
  com.ApplicationStarter
-com/auth/DataBaseUserDetailsService.java
- com.auth.DataBaseUserDetailsService
-com/model/User.java
- com.model.User
- com.model.User$UserBuilder
+com/exceptions/InvalidInputData.java
+ com.exceptions.InvalidInputData
+com/security/jwt/JwtTokenProvider.java
+ com.security.jwt.JwtTokenProvider
+com/servises/impl/PersonServiceImpl.java
+ com.servises.impl.PersonServiceImpl
+com/security/jwt/model/factory/JwtUserFactory.java
+ com.security.jwt.model.factory.JwtUserFactory
+com/security/config/SecurityConfig.java
+ com.security.config.SecurityConfig
+com/dao/repo/PersonRepository.java
+ com.dao.repo.PersonRepository
 com/model/roles/Roles.java
  com.model.roles.Roles
-com/auth/UserDetailsMapper.java
- com.auth.UserDetailsMapper
+com/security/jwt/exception/JwtAuthenticationException.java
+ com.security.jwt.exception.JwtAuthenticationException
+com/security/JwtUserDetailService.java
+ com.security.JwtUserDetailService
+com/servises/PersonService.java
+ com.servises.PersonService
+com/controllers/RegistrationController.java
+ com.controllers.RegistrationController
+com/security/jwt/config/JwtConfigurer.java
+ com.security.jwt.config.JwtConfigurer
+com/security/jwt/filter/JwtTokenFilter.java
+ com.security.jwt.filter.JwtTokenFilter
+com/controllers/AuthorizationController.java
+ com.controllers.AuthorizationController

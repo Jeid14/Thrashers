@@ -1,15 +1,12 @@
 package com.model;
 
-import com.model.roles.Roles;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 @Table(name = "all_users")
@@ -17,7 +14,7 @@ import java.util.Set;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Person {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -62,8 +59,8 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id) && Objects.equals(login, user.login) && Objects.equals(password, user.password);
+        Person person = (Person) o;
+        return Objects.equals(id, person.id) && Objects.equals(login, person.login) && Objects.equals(password, person.password);
     }
 
     @Override
