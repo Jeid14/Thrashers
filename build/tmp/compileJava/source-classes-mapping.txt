@@ -1,38 +1,48 @@
-com/model/Person.java
- com.model.Person
- com.model.Person$PersonBuilder
+com/util/CredentialsRegExp.java
+ com.util.CredentialsRegExp
 com/model/dto/PersonDTO.java
  com.model.dto.PersonDTO
  com.model.dto.PersonDTO$PersonDTOBuilder
-com/security/jwt/model/JwtPerson.java
- com.security.jwt.model.JwtPerson
-com/ApplicationStarter.java
- com.ApplicationStarter
-com/exceptions/InvalidInputData.java
- com.exceptions.InvalidInputData
-com/security/jwt/JwtTokenProvider.java
- com.security.jwt.JwtTokenProvider
-com/servises/impl/PersonServiceImpl.java
- com.servises.impl.PersonServiceImpl
-com/security/jwt/model/factory/JwtUserFactory.java
- com.security.jwt.model.factory.JwtUserFactory
-com/security/config/SecurityConfig.java
- com.security.config.SecurityConfig
-com/dao/repo/PersonRepository.java
- com.dao.repo.PersonRepository
-com/model/roles/Roles.java
- com.model.roles.Roles
-com/security/jwt/exception/JwtAuthenticationException.java
- com.security.jwt.exception.JwtAuthenticationException
 com/security/JwtUserDetailService.java
  com.security.JwtUserDetailService
-com/servises/PersonService.java
- com.servises.PersonService
+com/util/Fields.java
+ com.util.Fields
+com/exceptions/InvalidInputData.java
+ com.exceptions.InvalidInputData
+com/util/Mappings.java
+ com.util.Mappings
+com/security/jwt/model/JwtPerson.java
+ com.security.jwt.model.JwtPerson
+com/security/jwt/exception/JwtAuthenticationException.java
+ com.security.jwt.exception.JwtAuthenticationException
 com/controllers/RegistrationController.java
  com.controllers.RegistrationController
+com/servises/impl/PersonServiceImpl.java
+ com.servises.impl.PersonServiceImpl
+com/model/roles/Roles.java
+ com.model.roles.Roles
+com/util/CredentialsWarnings.java
+ com.util.CredentialsWarnings
+com/ApplicationStarter.java
+ com.ApplicationStarter
+com/servises/PersonService.java
+ com.servises.PersonService
+com/model/Person.java
+ com.model.Person
+ com.model.Person$PersonBuilder
+com/security/jwt/model/factory/JwtUserFactory.java
+ com.security.jwt.model.factory.JwtUserFactory
+com/dao/repo/PersonRepository.java
+ com.dao.repo.PersonRepository
+com/security/jwt/JwtTokenProvider.java
+ com.security.jwt.JwtTokenProvider
 com/security/jwt/config/JwtConfigurer.java
  com.security.jwt.config.JwtConfigurer
 com/security/jwt/filter/JwtTokenFilter.java
  com.security.jwt.filter.JwtTokenFilter
 com/controllers/AuthorizationController.java
  com.controllers.AuthorizationController
+com/controllers/TokenController.java
+ com.controllers.TokenController
+com/security/config/SecurityConfig.java
+ com.security.config.SecurityConfig

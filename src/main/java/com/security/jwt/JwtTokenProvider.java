@@ -6,6 +6,7 @@ import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -20,13 +21,14 @@ import java.util.Date;
 
 @Component
 public class JwtTokenProvider {
+    private static final String BEARER = "Bearer_";
+    private static final String ILLEGAL_TOKEN = "Illegal token.";
+    @Autowired
+    private UserDetailsService userDetailsService;
     @Value("${jwt.token.secret}")
     private String secret;
     @Value("${jwt.token.expired}")
     private long validityInMilliseconds;
-
-    @Autowired
-    private UserDetailsService userDetailsService;
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
@@ -53,17 +55,15 @@ public class JwtTokenProvider {
     }
 
     public String resolveToken(HttpServletRequest request) {
-        String bearerToken = request.getHeader("Authorization");
-        System.out.println(bearerToken);
-        if (bearerToken != null && bearerToken.startsWith("Bearer_")) {
-            return bearerToken.substring(7, bearerToken.length());
+        String bearerToken = request.getHeader(HttpHeaders.AUTHORIZATION);
+        if (bearerToken != null && bearerToken.startsWith(BEARER)) {
+            return bearerToken.substring(7);
         }
         return null;
     }
 
     public Authentication getAuthentication(String token) {
         UserDetails userDetails = this.userDetailsService.loadUserByUsername(getLogin(token));
-        System.out.println(userDetails);
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 
@@ -78,7 +78,7 @@ public class JwtTokenProvider {
 
             return !claimsJws.getBody().getExpiration().before(new Date());
         } catch (JwtException | IllegalArgumentException e) {
-            throw new JwtAuthenticationException("Illegal token ");
+            throw new JwtAuthenticationException(ILLEGAL_TOKEN);
         }
     }
 }
